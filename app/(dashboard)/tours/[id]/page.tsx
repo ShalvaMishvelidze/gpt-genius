@@ -6,8 +6,13 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 const url = `https://api.unsplash.com/search/photos?client_id=${process.env.UNSPLASH_ACCESS_KEY}&query=`;
 
-const SingleTourPage = async ({ params }: { params: { id: string } }) => {
-  const tour = await getSingleTour(params.id);
+const SingleTourPage = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
+  const tour = await getSingleTour(id);
 
   if (!tour) {
     return redirect("/tours");
