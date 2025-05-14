@@ -29,10 +29,6 @@ export const generateChatResponse = async (chatMessages: ChatMessage[]) => {
   }
 };
 
-export const getExistingTour = async ({ city, country }: Destination) => {
-  return null;
-};
-
 export const generateTourResponse = async ({ city, country }: Destination) => {
   const query = `Find a ${city} in this ${country}.
   If ${city} in this ${country} exists, create a list of things families can do in this ${city},${country}. 
@@ -76,5 +72,9 @@ export const generateTourResponse = async ({ city, country }: Destination) => {
 };
 
 export const createNewTour = async (tour: unknown) => {
+  return null;
+};
+
+export const getExistingTour = async ({ city, country }: Destination) => {
   return null;
 };
