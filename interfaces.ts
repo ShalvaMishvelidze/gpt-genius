@@ -13,5 +13,6 @@ export interface Tour {
   country: string;
   title: string;
   description: string;
-  stops: string[];
+  image: string | null;
+  stops: any;
 }

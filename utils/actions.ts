@@ -1,6 +1,7 @@
 "use server";
 
-import { ChatMessage, Destination } from "@/interfaces";
+import { ChatMessage, Destination, Tour } from "@/interfaces";
+import { prisma } from "@/lib/prisma";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
@@ -71,10 +72,19 @@ export const generateTourResponse = async ({ city, country }: Destination) => {
   }
 };
 
-export const createNewTour = async (tour: unknown) => {
-  return null;
+export const getExistingTour = async ({ city, country }: Destination) => {
+  return prisma.tour.findUnique({
+    where: {
+      city_country: {
+        city,
+        country,
+      },
+    },
+  });
 };
 
-export const getExistingTour = async ({ city, country }: Destination) => {
-  return null;
+export const createNewTour = async (tour: Tour) => {
+  return prisma.tour.create({
+    data: tour,
+  });
 };
