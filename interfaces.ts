@@ -9,6 +9,7 @@ export interface Destination {
 }
 
 export interface Tour {
+  id: string;
   city: string;
   country: string;
   title: string;
