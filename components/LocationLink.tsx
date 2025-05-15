@@ -7,7 +7,7 @@ const LocationLink = ({ map }: { map: string | null }) => {
       {map && (
         <a
           target="_blank"
-          className="text-xl font-bold capitalize mt-12 flex gap-3 items-center"
+          className="text-xl font-bold capitalize mt-8 flex gap-3 items-center"
           href={map}
         >
           go to location <FaLocationDot className="text-red-500" />

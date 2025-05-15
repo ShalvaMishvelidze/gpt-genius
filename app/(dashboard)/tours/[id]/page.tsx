@@ -1,4 +1,3 @@
-import LocationLink from "@/components/LocationLink";
 import { TourInfo } from "@/components/TourInfo";
 import { getSingleTour } from "@/utils/actions";
 import axios from "axios";
@@ -40,7 +39,6 @@ const SingleTourPage = async ({
         </div>
       ) : null}
       <TourInfo tour={tour} />
-      <LocationLink map={tour.map} />
     </div>
   );
 };

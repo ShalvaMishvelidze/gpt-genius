@@ -24,6 +24,8 @@ const NewTour = () => {
         return existingTour;
       }
       const newTour: Tour = await generateTourResponse(destination);
+      console.log("newTour", newTour);
+
       if (newTour) {
         await createNewTour(newTour);
         queryClient.invalidateQueries({ queryKey: ["tours"] });
@@ -47,8 +49,10 @@ const NewTour = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="max-w-2xl">
-        <h2 className="mb-4">Select your dream destination</h2>
+      <form onSubmit={handleSubmit} className="w-full">
+        <h2 className="mb-6 ml-3 capitalize font-bold">
+          Select your dream destination
+        </h2>
         <div className="join w-full">
           <input
             type="text"

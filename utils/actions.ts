@@ -43,8 +43,8 @@ export const generateTourResponse = async ({
       "country": "${country}",
       "title": "title of the tour",
       "description": "description of the location and tour",
-      "stops": ["short paragraph on the stop 1 ", "short paragraph on the stop 2","short paragraph on the stop 3"],
-      "map": "Generate a Google Maps link for the location "${location}, ${country}". Only return the link."
+      "stops": [{"location":"location name of the stop","description":"description of the stop","map":"google maps link of 'google.com/maps/search/${location} ${country}'"}, {"location":"location name of the stop","description":"description of the stop","map":"google maps link of 'google.com/maps/search/location name of the stop ${location} ${country}'"},{"location":"location name of the stop","description":"description of the stop","map":"google maps link of 'google.com/maps/search/location name of the stop ${location} ${country}'"}],
+      "map": "Generate a Google Maps link for the location "${location} ${country}". Only return the link."
     }
   }
   If you can't find info on exact ${location}, or ${location} does not exist, or it's population is less than 1, or it is not located in the following ${country} return { "tour": null }, with no additional characters.`;
