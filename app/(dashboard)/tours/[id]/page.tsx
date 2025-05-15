@@ -1,3 +1,4 @@
+import LocationLink from "@/components/LocationLink";
 import { TourInfo } from "@/components/TourInfo";
 import { getSingleTour } from "@/utils/actions";
 import axios from "axios";
@@ -18,7 +19,7 @@ const SingleTourPage = async ({
     return redirect("/tours");
   }
 
-  const { data } = await axios.get(`${url}${tour.city}`);
+  const { data } = await axios.get(`${url}${tour.location}`);
   const image = data?.results[0]?.urls?.raw;
 
   return (
@@ -39,6 +40,7 @@ const SingleTourPage = async ({
         </div>
       ) : null}
       <TourInfo tour={tour} />
+      <LocationLink map={tour.map} />
     </div>
   );
 };

@@ -29,7 +29,7 @@ const NewTour = () => {
         queryClient.invalidateQueries({ queryKey: ["tours"] });
         return newTour;
       }
-      toast.error("No matching city found...");
+      toast.error("No matching location found...");
       return null;
     },
   });
@@ -53,8 +53,8 @@ const NewTour = () => {
           <input
             type="text"
             className="input input-bordered join-item w-full"
-            placeholder="city"
-            name="city"
+            placeholder="location"
+            name="location"
             required
           />
           <input

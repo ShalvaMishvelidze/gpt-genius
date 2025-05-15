@@ -4,16 +4,17 @@ export interface ChatMessage {
 }
 
 export interface Destination {
-  city: string;
+  location: string;
   country: string;
 }
 
 export interface Tour {
   id: string;
-  city: string;
+  location: string;
   country: string;
   title: string;
   description: string;
   image: string | null;
   stops: any;
+  map: string | null;
 }

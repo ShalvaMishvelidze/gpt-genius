@@ -19,7 +19,7 @@ const Tours = () => {
         <div className="join w-full">
           <input
             type="text"
-            placeholder="enter city or country here..."
+            placeholder="enter location or country here..."
             className="input input-bordered join-item w-full"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}

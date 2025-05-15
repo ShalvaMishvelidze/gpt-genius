@@ -2,7 +2,7 @@ import { Tour } from "@/interfaces";
 import Link from "next/link";
 
 const TourCard = ({ tour }: { tour: Tour }) => {
-  const { city, id, country } = tour;
+  const { location, id, country } = tour;
   return (
     <Link
       href={`/tours/${id}`}
@@ -10,7 +10,7 @@ const TourCard = ({ tour }: { tour: Tour }) => {
     >
       <div className="card-body items-center text-center">
         <h2 className="card-title text-center">
-          {city}, {country}
+          {location}, {country}
         </h2>
       </div>
     </Link>
